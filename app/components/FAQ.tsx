@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
 
 const faqs = [
@@ -31,36 +30,31 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 bg-[#edf1f7]">
-      <div className="max-w-[1200px] mx-auto px-14">
-        <div className="grid md:grid-cols-[200px_1fr] gap-12">
+    <section id="faq" className="py-16 md:py-20 bg-[#edf1f7]">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-14">
+        <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12">
           {/* Left label */}
           <SectionWrapper>
-            <p className="text-[#003da6] text-[20px] font-bold mb-2">FAQ</p>
-            <h2 className="text-[#003da6] text-[42px] font-bold leading-tight">よくある質問</h2>
+            <p className="text-[#003da6] text-[18px] md:text-[20px] font-bold mb-2">FAQ</p>
+            <h2 className="text-[#003da6] text-[34px] md:text-[42px] font-bold leading-tight">よくある質問</h2>
           </SectionWrapper>
 
           {/* Right: Q list */}
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {faqs.map((item, i) => (
               <SectionWrapper key={i} delay={i * 0.06}>
-                <div className="bg-white border border-[#003da6] rounded-[20px] overflow-hidden">
+                <div className="bg-white border border-[#003da6] rounded-[16px] md:rounded-[20px] overflow-hidden">
                   <button
-                    className="w-full flex items-center justify-between px-7 py-[22px] text-left"
+                    className="w-full flex items-center justify-between px-5 md:px-7 py-[18px] md:py-[22px] text-left"
                     onClick={() => setOpen(open === i ? null : i)}
                   >
-                    <span className="text-[#003da6] text-[18px] font-bold">Q. {item.q}</span>
-                    <Image
-                      src="/assets/icon-wifi.png"
-                      alt=""
-                      width={30}
-                      height={30}
-                      className={`flex-shrink-0 ml-4 transition-transform ${open === i ? "rotate-45" : ""}`}
-                      style={{ filter: "brightness(0) saturate(100%) invert(16%) sepia(90%) saturate(2000%) hue-rotate(210deg)" }}
-                    />
+                    <span className="text-[#003da6] text-[15px] md:text-[18px] font-bold pr-4">Q. {item.q}</span>
+                    <span className={`flex-shrink-0 text-[#003da6] text-[24px] font-light transition-transform ${open === i ? "rotate-45" : ""}`}>
+                      +
+                    </span>
                   </button>
                   {open === i && (
-                    <div className="px-7 pb-5 text-[#003da6] text-[16px] leading-[30px]">
+                    <div className="px-5 md:px-7 pb-4 md:pb-5 text-[#003da6] text-[14px] md:text-[16px] leading-[28px] md:leading-[30px]">
                       {item.a}
                     </div>
                   )}

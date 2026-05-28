@@ -38,19 +38,19 @@ export default function AboutSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="philosophy" className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-14">
+    <section id="philosophy" className="py-16 md:py-20 bg-[#edf1f7]">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-14">
         <SectionWrapper>
-          <p className="text-[#003da6] text-[20px] font-bold mb-2">インフォメーションからエモーションへ</p>
-          <h2 className="text-[#003da6] text-[42px] font-bold mb-10">OQTAに込めた想い</h2>
+          <p className="text-[#003da6] text-[18px] md:text-[20px] font-bold mb-2">Philosophy</p>
+          <h2 className="text-[#003da6] text-[32px] md:text-[42px] font-bold mb-8 md:mb-10">OQTAに込めた想い</h2>
 
           {/* Tabs */}
-          <div className="flex gap-3 flex-wrap mb-10">
+          <div className="flex gap-2 md:gap-3 flex-wrap mb-8 md:mb-10">
             {tabs.map((t, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`h-[57px] px-6 rounded-[60px] text-[18px] font-bold border border-[#003da6] transition-colors ${
+                className={`h-[48px] md:h-[57px] px-4 md:px-6 rounded-[60px] text-[14px] md:text-[18px] font-bold border border-[#003da6] transition-colors ${
                   i === active
                     ? "bg-white text-[#003da6]"
                     : "bg-[#e5ecf6] text-[#7488a9]"
@@ -63,8 +63,8 @@ export default function AboutSection() {
 
           {/* Content */}
           <div className="max-w-[575px]">
-            <h3 className="text-[#003da6] text-[26px] font-bold mb-6">{tabs[active].heading}</h3>
-            <p className="text-[#003da6] text-[16px] leading-[40px] whitespace-pre-line">{tabs[active].body}</p>
+            <h3 className="text-[#003da6] text-[22px] md:text-[26px] font-bold mb-5 md:mb-6">{tabs[active].heading}</h3>
+            <p className="text-[#003da6] text-[15px] md:text-[16px] leading-[36px] md:leading-[40px] whitespace-pre-line">{tabs[active].body}</p>
           </div>
         </SectionWrapper>
       </div>
