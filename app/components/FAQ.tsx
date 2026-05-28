@@ -1,24 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
 
 const faqs = [
   {
-    q: "Heart Poppoはどこで手に入りますか？",
-    a: "現在はOQTAパートナー経由でのご提供となります。詳細はお問い合わせください。",
+    q: "利用するのにインターネットは必要ですか？",
+    a: "はい。送る側はスマートフォンのインターネット接続が必要です。Heart Poppoはご自宅のWi-Fiに接続してご利用ください。",
   },
   {
-    q: "送り主が誰かは本当にわからないのですか？",
-    a: "はい。受け取る方の端末には「誰かが想いを送ってくれた」という事実のみが届きます。送り主の名前はOQTAのサーバーのみが知っており、受け取る方はもちろん、運営側にも表示されません。",
+    q: "デバイスの音量は調節する事ができますか？",
+    a: "はい。Heart Poppo本体のつまみで音量を調節できます。消音（0）に設定することも可能です。",
   },
   {
-    q: "何人でも送れますか？",
-    a: "サークルに参加しているメンバー全員が送ることができます。受け取る側には合算で届きます。",
+    q: "外出中に音が鳴っていたかどうか後から確認することは出来ますか？",
+    a: "送った側のアプリには履歴が残ります。ただし、受け取った側には履歴は残りません。この「余白」がOQTAらしさです。",
   },
   {
-    q: "インターネット環境が必要ですか？",
-    a: "送る側はスマートフォンのデータ通信が必要です。Heart Poppoは自宅のWi-Fiに接続して使います。",
+    q: "時計としても使えますか？",
+    a: "はい。Heart Poppoはアナログ時計として日常的にお使いいただけます。",
+  },
+  {
+    q: "鳩時計が鳴かないと寂しくなるのではないですか？",
+    a: "その感覚こそが、誰かに想ってもらえることのありがたさを教えてくれます。鳴らない日も、この時計があるだけで「誰かが想ってくれるかもしれない」という温かさを感じていただけます。",
   },
 ];
 
@@ -26,38 +31,43 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-32 bg-white">
-      <div className="max-w-3xl mx-auto px-6">
-        <SectionWrapper>
-          <p className="text-[#7488a9] text-sm tracking-widest uppercase mb-4">
-            FAQ
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2540] mb-12">
-            よくある質問
-          </h2>
-        </SectionWrapper>
+    <section id="faq" className="py-20 bg-[#edf1f7]">
+      <div className="max-w-[1200px] mx-auto px-14">
+        <div className="grid md:grid-cols-[200px_1fr] gap-12">
+          {/* Left label */}
+          <SectionWrapper>
+            <p className="text-[#003da6] text-[20px] font-bold mb-2">FAQ</p>
+            <h2 className="text-[#003da6] text-[42px] font-bold leading-tight">よくある質問</h2>
+          </SectionWrapper>
 
-        <div className="space-y-3">
-          {faqs.map((item, i) => (
-            <SectionWrapper key={i} delay={i * 0.08}>
-              <div className="border border-[#e5ecf6] rounded-2xl overflow-hidden">
-                <button
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-[#f5f7fc] transition-colors"
-                  onClick={() => setOpen(open === i ? null : i)}
-                >
-                  <span className="font-medium text-[#1a2540]">{item.q}</span>
-                  <span className="text-[#7488a9] text-xl flex-shrink-0">
-                    {open === i ? "−" : "+"}
-                  </span>
-                </button>
-                {open === i && (
-                  <div className="px-6 pb-5 text-[#4a5a78] leading-relaxed text-sm">
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            </SectionWrapper>
-          ))}
+          {/* Right: Q list */}
+          <div className="space-y-4">
+            {faqs.map((item, i) => (
+              <SectionWrapper key={i} delay={i * 0.06}>
+                <div className="bg-white border border-[#003da6] rounded-[20px] overflow-hidden">
+                  <button
+                    className="w-full flex items-center justify-between px-7 py-[22px] text-left"
+                    onClick={() => setOpen(open === i ? null : i)}
+                  >
+                    <span className="text-[#003da6] text-[18px] font-bold">Q. {item.q}</span>
+                    <Image
+                      src="/assets/icon-wifi.png"
+                      alt=""
+                      width={30}
+                      height={30}
+                      className={`flex-shrink-0 ml-4 transition-transform ${open === i ? "rotate-45" : ""}`}
+                      style={{ filter: "brightness(0) saturate(100%) invert(16%) sepia(90%) saturate(2000%) hue-rotate(210deg)" }}
+                    />
+                  </button>
+                  {open === i && (
+                    <div className="px-7 pb-5 text-[#003da6] text-[16px] leading-[30px]">
+                      {item.a}
+                    </div>
+                  )}
+                </div>
+              </SectionWrapper>
+            ))}
+          </div>
         </div>
       </div>
     </section>
