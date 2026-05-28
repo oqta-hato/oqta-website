@@ -1,34 +1,18 @@
+import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
-
-const media = [
-  "読売新聞",
-  "日本経済新聞",
-  "クロワッサン",
-  "テレビ東京 WBS",
-  "NHK おはよう日本",
-  "TBS マツコの知らない世界",
-];
 
 export default function MediaCoverage() {
   return (
-    <section className="py-24 bg-white">
+    <section id="media" className="py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <SectionWrapper>
-          <p className="text-[#7488a9] text-sm tracking-widest uppercase text-center mb-12">
-            Media Coverage
-          </p>
-        </SectionWrapper>
-        <SectionWrapper delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {media.map((name) => (
-              <div
-                key={name}
-                className="h-16 rounded-xl bg-[#f5f7fc] flex items-center justify-center text-[#7488a9] text-sm font-medium"
-              >
-                {name}
-              </div>
-            ))}
-          </div>
+          <Image
+            src="/assets/jisseki.png"
+            alt="メディア掲載・受賞歴 — WINK2024最優秀賞, 経産省JHeC2018優秀賞, Edge2024ファイナリスト, ACC広告賞ファイナリスト, 読売新聞, クロワッサン, 日本経済新聞朝刊, テレ東WBS, NHKおはよう日本, TBSマツコの知らない世界"
+            width={1400}
+            height={500}
+            className="w-full"
+          />
         </SectionWrapper>
       </div>
     </section>
