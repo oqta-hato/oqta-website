@@ -10,6 +10,7 @@
   --color-bg:        #edf1f7;
   --color-accent:    #e5ecf6;
   --color-muted:     #7488a9;
+  --color-decorative: #c5cdda; /* Italianno装飾数字 01-04 */
   --color-surface:   #ffffff;
 
   --font-sans: var(--font-zen-kaku), var(--font-inter), sans-serif;
