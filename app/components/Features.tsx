@@ -104,9 +104,9 @@ export default function Features() {
               "absolute -top-3 pointer-events-none select-none z-0",
               "font-[family-name:var(--font-italianno)]",
               "text-[90px] md:text-[160px] xl:text-[180px] leading-none text-[#c5cdda]",
-              f.imgSide === "left-bleed" || (f.imgSide === null && f.num === "03")
-                ? "left-3 md:left-6 xl:left-10"
-                : "right-3 md:right-6 xl:right-10",
+              f.num === "04"
+                ? "right-3 md:right-6 xl:right-10"
+                : "left-3 md:left-6 xl:left-10",
             ].join(" ")}
           >
             {f.num}
@@ -147,11 +147,11 @@ export default function Features() {
             </div>
           )}
 
-          {/* 02 想う: テキスト右寄り、画像なし */}
+          {/* 02 想う: テキスト左、画像なし */}
           {f.imgSide === null && f.num === "02" && (
             <div className="relative max-w-[1200px] mx-auto px-6 md:px-14">
               <SectionWrapper delay={0.1}>
-                <div className="relative z-10 pt-16 md:pt-20 xl:max-w-[560px] xl:ml-auto">
+                <div className="relative z-10 pt-16 md:pt-20 xl:max-w-[560px]">
                   <FeatureText num={f.num} title={f.title} paragraphs={f.paragraphs} />
                 </div>
               </SectionWrapper>

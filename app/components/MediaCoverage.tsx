@@ -1,11 +1,11 @@
 import SectionWrapper from "./SectionWrapper";
 
 const awards = [
-  "WINK2024 最優秀賞",
-  "経産省JHeC2018 優秀賞",
-  "Edge2024「ソーシャルビジネスコンテスト」 ファイナリスト",
-  "総務省「異能ジェネレーションアワード」 ノミネート",
-  "ACC広告賞 ファイナリスト",
+  { event: "WINK2024", result: "最優秀賞" },
+  { event: "経産省JHeC2018", result: "優秀賞" },
+  { event: "Edge2024「ソーシャルビジネスコンテスト」", result: "ファイナリスト" },
+  { event: "総務省「異能ジェネレーションアワード」", result: "ノミネート" },
+  { event: "ACC広告賞", result: "ファイナリスト" },
 ];
 
 const media = [
@@ -25,47 +25,32 @@ export default function MediaCoverage() {
         <SectionWrapper>
 
           {/* セクション見出し */}
-          <h2 className="text-[#003da6] text-[22px] md:text-[28px] font-bold mb-8 md:mb-10">
+          <h2 className="text-center text-[#003da6] text-[22px] md:text-[28px] font-bold mb-10 md:mb-12">
             メディア掲載・受賞歴
           </h2>
 
-          {/* 受賞歴 */}
-          <div className="mb-8 md:mb-10">
-            <p className="text-[#7488a9] text-[12px] md:text-[13px] font-medium uppercase tracking-widest mb-4">
-              Awards
-            </p>
-            <div className="flex flex-wrap gap-2 md:gap-3">
-              {awards.map((award) => (
-                <span
-                  key={award}
-                  className="inline-flex items-center px-4 py-[7px] rounded-full
-                             bg-[#e5ecf6] text-[#003da6]
-                             text-[13px] md:text-[14px] font-medium"
-                >
-                  {award}
-                </span>
-              ))}
-            </div>
+          {/* 受賞歴: 年号(小)＋結果(太字)の2行表記を中央揃えで横並び */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 md:gap-x-12 md:gap-y-8 mb-10 md:mb-12">
+            {awards.map((a) => (
+              <div key={a.event} className="text-center">
+                <p className="text-[#7488a9] text-[12px] md:text-[13px] mb-1">{a.event}</p>
+                <p className="text-[#003da6] text-[16px] md:text-[18px] font-bold leading-tight">
+                  {a.result}
+                </p>
+              </div>
+            ))}
           </div>
 
-          {/* 区切り */}
-          <div className="border-t border-[#003da6]/10 mb-8 md:mb-10" />
-
-          {/* メディア掲載 */}
-          <div>
-            <p className="text-[#7488a9] text-[12px] md:text-[13px] font-medium uppercase tracking-widest mb-4">
-              Media
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 md:gap-x-8 md:gap-y-3">
-              {media.map((name) => (
-                <span
-                  key={name}
-                  className="text-[#003da6] text-[14px] md:text-[15px]"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
+          {/* メディア掲載: 中央揃えで横並び */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 md:gap-x-10 md:gap-y-4">
+            {media.map((name) => (
+              <span
+                key={name}
+                className="text-[#003da6] text-[15px] md:text-[17px] font-medium"
+              >
+                {name}
+              </span>
+            ))}
           </div>
 
         </SectionWrapper>

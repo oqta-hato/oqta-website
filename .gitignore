@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design assets & scratch (do not commit large binaries)
+OQTA.fig
+OQTA.pdf
+*.zip
+app.tar
+/tmp/
+verify-*.png
+oqta-*-full*.png
+.playwright-mcp/

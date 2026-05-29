@@ -41,7 +41,7 @@ export default function AboutSection() {
     <section id="philosophy" className="py-16 md:py-20 bg-[#edf1f7]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-14">
         <SectionWrapper>
-          <p className="text-[#003da6] text-[18px] md:text-[20px] font-bold mb-2">Philosophy</p>
+          <p className="text-[#003da6] text-[15px] md:text-[17px] font-bold mb-2">インフォメーションからエモーションへ</p>
           <h2 className="text-[#003da6] text-[32px] md:text-[42px] font-bold mb-8 md:mb-10">OQTAに込めた想い</h2>
 
           {/* Tabs */}
