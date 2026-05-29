@@ -28,12 +28,16 @@
 
 ---
 
-## 1. ブランド・アーキテクチャ（確定）
+## 1. ブランド・アーキテクチャ（確定・2026-05-29訂正）
 
-- **OQTA = マスターブランド／サービスそのもの／カルチャー**。サイトの主語は常に OQTA。
+- **inoree（INORI）＝ 会社／“祈り”全般の事業体（最上位マスター）**。inoree自体の企業サイトは**別立て・別途制作**（このoqta.comの範囲外）。
+- **OQTA ＝ inoree のサービスの一つ**（生きている人への祈りのカルチャー）。**このサイト(oqta.com)の主語は OQTA**＝OQTAサービス専用サイト。
 - 製品（鳩時計）の地域名：**国内 = Heart Poppo / 海外 = INORI Clock**（同一プロダクトの地域別ネーム。Famicom=NES の関係）。
-- OQTA の下に並ぶファミリー：Heart Poppo / INORI Clock、**OQTA Lite Receiver**、（今後増える）。
+- OQTAの下のファミリー：Heart Poppo / INORI Clock、**OQTA Lite Receiver**、（今後増える）。
+- **お祈りマップ（inoree.world / INORI.world）＝ OQTAサービスの機能**として、このサイトに組み込む。
 - **OQTA HATO は廃止**（レガシー名）。
+- ⚠️「INORI」は ①会社(inoree) ②祈りの概念(旗印の核) ③製品海外名(INORI Clock) の三重。会社レベルは別サイト、本サイトは②概念＋③製品の文脈で扱う。
+- ※サイト範囲＝OQTAサービス専用。INORI(企業)サイトは別立て、で確定（2026-05-29）。
 
 ## 2. ポジショニング転換（最重要）
 
